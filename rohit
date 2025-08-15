@@ -45,7 +45,7 @@ git checkout be8a642c99d1cfe71d9ea8e9700b4703a58b5e3a(ID) --*/(file name)
 git restore . If you made any changes in this code by mistake.
 git diff --cached -- what you want to check in the code before you can check.
 git restore --staged . (If you made any changes in this code by mistake, want save)
-
+git restore --worktree index.html --- (If you made any changes in this code by mistake, want save)
 
 
 
