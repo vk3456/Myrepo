@@ -46,6 +46,10 @@ git restore . If you made any changes in this code by mistake.
 git diff --cached -- what you want to check in the code before you can check.
 git restore --staged . (If you made any changes in this code by mistake, want save)
 git restore --worktree index.html --- (If you made any changes in this code by mistake, want save)
+git log -p -1  (package - p - if i want to go first change code comment)
+git log --pretty=oneline (if i want to see eveyline comment)
+git log --pretty=formate:"%h -%an, %ar:%s" ---
+
 
 
 
