@@ -39,7 +39,10 @@ git config	Set Git settings	    git config --global user.name "Your Name"
 git tag	        Mark versions	    git tag v1.0
 git rm	        Delete tracked file	git rm file.txt
 git clean	Remove untracked files	git clean -fd
-git show 02d4a29d06b942af194b41ff9218895ee04d62ff:index.html
+git show 02d4a29d06b942af194b41ff9218895ee04d62ff:index.html(you can see the old commted )
+git checkout master --* (we can find the delete records manually)
+git checkout be8a642c99d1cfe71d9ea8e9700b4703a58b5e3a(ID) --*/(file name)
+
 
 
 
