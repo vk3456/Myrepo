@@ -18,24 +18,255 @@ user.email=Rohit.kumar1995.rj@gmail.com
 
 Common Git Commands (with Examples)
 
-Command	            Description	        Example
+Command	        Description	        Example
 git init	Start a new Git repo	git init
-git clone	Copy existing repo	git clone URL
-git status	Show file states	git status
-git add	        Stage changes           git add file.txt
+git clone	Copy existing repo	    git clone URL
+git status	Show file states	    git status
+git add	    Stage changes           git add file.txt
 git commit	Save changes	        git commit -m "msg"
-git log	        View commit history	git log
+git log	    View commit history	    git log
 git diff	See code differences	git diff
 git branch	Manage branches	        git branch dev
-git checkout	Switch branch	        git checkout dev
+git checkout Switch branch	        git checkout dev
 git merge	Merge branches	        git merge dev
-git pull	Get remote changes	git pull origin main
-git push	Send local changes	git push origin main
+git pull	Get remote changes	    git pull origin main
+git push	Send local changes	    git push origin main
 git remote	Manage remotes	        git remote -v
-git reset	Undo staged changes	git reset file.txt
-git revert	Undo commit safely	git revert abc123
+git reset	Undo staged changes	    git reset file.txt
+git revert	Undo commit safely	    git revert abc123
 git stash	Save work temporarily	git stash
-git config	Set Git settings	git config --global user.name "Your Name"
-git tag	        Mark versions	        git tag v1.0
+git config	Set Git settings	    git config --global user.name "Your Name"
+git tag	        Mark versions	    git tag v1.0
 git rm	        Delete tracked file	git rm file.txt
 git clean	Remove untracked files	git clean -fd
+
+
+
+*********************************Common Git Commands – With Examples and Descriptions**********************************************************************************
+
+
+
+🔹 1. git init
+
+💻 Example:
+
+git init
+
+
+📝 Description:
+Initializes a new Git repository in the current directory. Creates a hidden .git folder where Git tracks everything.
+
+🔹 2. git clone
+
+💻 Example:
+
+git clone https://github.com/user/repo.git
+
+
+📝 Description:
+Creates a local copy of a remote repository (like from GitHub or GitLab).
+
+🔹 3. git status
+
+💻 Example:
+
+git status
+
+
+📝 Description:
+Shows the current state of the working directory — which files are modified, staged, or untracked.
+
+🔹 4. git add
+
+💻 Example:
+
+git add file.txt      # Add one file  
+git add .             # Add all changes
+
+
+📝 Description:
+Stages changes for the next commit. You must stage files before committing.
+
+🔹 5. git commit
+
+💻 Example:
+
+git commit -m "Added login form"
+
+
+📝 Description:
+Saves the staged changes as a new commit with a message. Think of this as a version snapshot.
+
+🔹 6. git log
+
+💻 Example:
+
+git log
+git log --oneline     # Compact view
+
+
+📝 Description:
+Displays the commit history of the project.
+
+🔹 7. git diff
+
+💻 Example:
+
+git diff              # Show unstaged changes
+git diff --staged     # Show staged changes
+
+
+📝 Description:
+Shows the difference between working directory, staging, and last commit.
+
+🔹 8. git branch
+
+💻 Example:
+
+git branch             # List branches  
+git branch feature-x   # Create a new branch
+
+
+📝 Description:
+Manages branches. Useful for feature development without affecting main code.
+
+🔹 9. git checkout
+
+💻 Example:
+
+git checkout main           # Switch to a branch  
+git checkout -b new-branch  # Create and switch
+
+
+📝 Description:
+Switches between branches or restores files.
+
+🔹 10. git merge
+
+💻 Example:
+
+git merge feature-x
+
+
+📝 Description:
+Merges another branch into the current one. Resolves changes into one history.
+
+🔹 11. git pull
+
+💻 Example:
+
+git pull origin main
+
+
+📝 Description:
+Fetches changes from a remote repository and merges them into your current branch.
+
+🔹 12. git push
+
+💻 Example:
+
+git push origin main
+
+
+📝 Description:
+Sends your local commits to the remote repository (e.g., GitHub).
+
+🔹 13. git remote
+
+💻 Example:
+
+git remote add origin https://github.com/user/repo.git
+git remote -v
+
+
+📝 Description:
+Adds/view/removes links to remote repositories.
+
+🔹 14. git reset
+
+💻 Example:
+
+git reset file.txt         # Unstage file  
+git reset --hard HEAD~1    # Remove last commit
+
+
+📝 Description:
+Resets the current state — can unstage files or completely remove recent commits.
+
+🔹 15. git revert
+
+💻 Example:
+
+git revert <commit-id>
+
+
+📝 Description:
+Safely undoes a commit by creating a new "reversing" commit. Keeps history intact.
+
+🔹 16. git stash
+
+💻 Example:
+
+git stash             # Save uncommitted changes  
+git stash apply       # Restore them later
+
+
+📝 Description:
+Temporarily shelves changes. Useful if you want to switch branches quickly.
+
+🔹 17. git config
+
+💻 Example:
+
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+
+📝 Description:
+Sets your Git identity and settings.
+
+🔹 18. git tag
+
+💻 Example:
+
+git tag v1.0
+git tag -a v1.0 -m "Release version 1.0"
+
+
+📝 Description:
+Tags a commit with a version label — used for releases.
+
+🔹 19. git rm
+
+💻 Example:
+
+git rm unwanted.txt
+
+
+📝 Description:
+Removes a file from the working directory and stages the deletion.
+
+🔹 20. git clean
+
+💻 Example:
+
+git clean -fd
+
+
+📝 Description:
+Deletes untracked files and directories. Use carefully!
+
+📋 Bonus: Git Help Command
+git help <command>
+# Example:
+git help commit
+
+
+📝 Shows manual/help for any Git command.
+
+📌 Git Basic Flow Summary
+git init                      # Start repo
+git add .                     # Stage files
+git commit -m "Message"       # Commit changes
+git remote add origin URL     # Connect remote
+git push -u origin main       # Push code

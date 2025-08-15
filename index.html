@@ -1,73 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Login Form - MDBootstrap</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3D Responsive Navbar with Login & Logout - MDBootstrap</title>
 
-  <!-- MDBootstrap CSS -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
-    rel="stylesheet"
-  />
+<!-- MDB CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+  .card-3d {
+    border-radius: 15px;
+    box-shadow:
+      0 4px 6px rgba(0,0,0,0.1),
+      0 10px 20px rgba(0,0,0,0.15),
+      0 15px 40px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    background: #fff;
+  }
+  .card-3d:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+      0 10px 20px rgba(0,0,0,0.2),
+      0 20px 40px rgba(0,0,0,0.3);
+  }
+  .modal-backdrop {
+    background-color: rgba(0,0,0,0.6) !important;
+  }
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+  .navbar-brand img:hover {
+    transform: scale(1.1);
+  }
+  /* Container spacing */
+  main.container {
+    margin-top: 40px;
+    max-width: 600px;
+  }
+</style>
 </head>
 <body>
 
-  <section class="vh-100" style="background-color: #f5f5f5;">
-    <div class="container h-100 d-flex justify-content-center align-items-center">
-      <div class="row d-flex justify-content-center align-items-center w-100">
-        <div class="col-md-8 col-lg-6 col-xl-5">
-          <div class="card shadow-2-strong" style="border-radius: 1rem;">
-            <div class="card-body p-5 text-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+      <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" alt="Logo" />
+      MyCabApp
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-              <h3 class="mb-4">Sign in</h3>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Manage a Cab</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Claim</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Approval</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+        <li class="nav-item me-2">
+          <button class="btn btn-primary btn-sm" data-mdb-toggle="modal" data-mdb-target="#loginModal">Login</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-danger btn-sm" data-mdb-toggle="modal" data-mdb-target="#logoutModal">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-              <form>
+<!-- Booking Form Mini Project -->
+<main class="container">
+  <div class="card card-3d p-4">
+    <h3 class="mb-4 text-center">Book a Cab</h3>
+    <form id="bookingForm">
+      <div class="form-outline mb-3">
+        <input type="text" id="pickupLocation" class="form-control" required />
+        <label class="form-label" for="pickupLocation">Pickup Location</label>
+      </div>
+      <div class="form-outline mb-3">
+        <input type="text" id="dropLocation" class="form-control" required />
+        <label class="form-label" for="dropLocation">Drop Location</label>
+      </div>
+      <div class="form-outline mb-3">
+        <input type="date" id="rideDate" class="form-control" required />
+        <label class="form-label" for="rideDate">Date</label>
+      </div>
+      <div class="form-outline mb-4">
+        <input type="time" id="rideTime" class="form-control" required />
+        <label class="form-label" for="rideTime">Time</label>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Book Now</button>
+    </form>
+  </div>
+</main>
 
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-                  <label class="form-label" for="typeEmailX-2">Email</label>
-                </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-                  <label class="form-label" for="typePasswordX-2">Password</label>
-                </div>
-
-                <!-- Remember me checkbox -->
-                <div class="form-check d-flex justify-content-start mb-4">
-                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                  <label class="form-check-label ms-2" for="form1Example3"> Remember me </label>
-                </div>
-
-                <!-- Submit button -->
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-
-                <hr class="my-4">
-
-                <!-- Social login buttons (optional) -->
-                <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;" type="button">
-                  <i class="fab fa-facebook-f me-2"></i> Login with Facebook
-                </button>
-                <button class="btn btn-lg btn-block btn-danger" style="background-color: #dd4b39;" type="button">
-                  <i class="fab fa-google me-2"></i> Login with Google
-                </button>
-
-              </form>
-
-            </div>
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-3d p-4">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <form id="loginForm">
+          <div class="form-outline mb-4">
+            <input type="email" id="loginEmail" class="form-control" required />
+            <label class="form-label" for="loginEmail">Email address</label>
           </div>
-        </div>
+          <div class="form-outline mb-4">
+            <input type="password" id="loginPassword" class="form-control" required />
+            <label class="form-label" for="loginPassword">Password</label>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Sign in</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- MDBootstrap JS -->
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
-  ></script>
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-3d p-4">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="logoutModalLabel">Logout</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <p>Are you sure you want to logout?</p>
+        <button id="confirmLogout" type="button" class="btn btn-danger w-100" data-mdb-dismiss="modal">Yes, Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MDB JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    alert(`Logged in as ${email}`);
+    mdb.Modal.getInstance(document.getElementById('loginModal')).hide();
+    e.target.reset();
+  });
+
+  document.getElementById('confirmLogout').addEventListener('click', () => {
+    alert('You have logged out.');
+  });
+
+  document.getElementById('bookingForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const pickup = document.getElementById('pickupLocation').value;
+    const drop = document.getElementById('dropLocation').value;
+    const date = document.getElementById('rideDate').value;
+    const time = document.getElementById('rideTime').value;
+    alert(`Cab booked!\nPickup: ${pickup}\nDrop: ${drop}\nDate: ${date}\nTime: ${time}`);
+    e.target.reset();
+  });
+</script>
+
 </body>
 </html>
