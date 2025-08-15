@@ -1,0 +1,41 @@
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Rohit kumar
+user.email=Rohit.kumar1995.rj@gmail.com
+
+
+
+Common Git Commands (with Examples)
+
+Command	            Description	        Example
+git init	Start a new Git repo	git init
+git clone	Copy existing repo	git clone URL
+git status	Show file states	git status
+git add	        Stage changes           git add file.txt
+git commit	Save changes	        git commit -m "msg"
+git log	        View commit history	git log
+git diff	See code differences	git diff
+git branch	Manage branches	        git branch dev
+git checkout	Switch branch	        git checkout dev
+git merge	Merge branches	        git merge dev
+git pull	Get remote changes	git pull origin main
+git push	Send local changes	git push origin main
+git remote	Manage remotes	        git remote -v
+git reset	Undo staged changes	git reset file.txt
+git revert	Undo commit safely	git revert abc123
+git stash	Save work temporarily	git stash
+git config	Set Git settings	git config --global user.name "Your Name"
+git tag	        Mark versions	        git tag v1.0
+git rm	        Delete tracked file	git rm file.txt
+git clean	Remove untracked files	git clean -fd
