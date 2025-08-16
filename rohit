@@ -49,6 +49,16 @@ git restore --worktree index.html --- (If you made any changes in this code by m
 git log -p -1  (package - p - if i want to go first change code comment)
 git log --pretty=oneline (if i want to see eveyline comment)
 git log --pretty=formate:"%h -%an, %ar:%s" ---
+git log --grep="fix bug" === commit msg
+git log --since="2025-01-01" --- date
+git log --until="2025-01-01" same
+git log --author="rohit" -- author name
+git log --no-merges === to check merges
+
+git push --- vcode se code push kr rahe git per
+git pull -- git se code pull kr rahe hai vcode me
+
+ 
 
 
 
