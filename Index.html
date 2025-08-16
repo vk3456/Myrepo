@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Tech Blog</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+    .post-card {
+      transition: transform 0.2s;
+    }
+    .post-card:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">TechieRohit</a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container my-5">
+  <div class="row">
+    <!-- Blog Posts -->
+    <div class="col-lg-8 mb-4">
+      <div class="card mb-4 post-card">
+        <div class="card-body">
+          <h5 class="card-title">Top 10 VS Code Extensions for Developers</h5>
+          <p class="card-text">Boost your productivity with these essential extensions for Visual Studio Code.</p>
+          <a href="post1.html" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+
+      <div class="card mb-4 post-card">
+        <div class="card-body">
+          <h5 class="card-title">Getting Started with React</h5>
+          <p class="card-text">An introduction to building interactive UIs with React.js for beginners.</p>
+          <a href="post2.html" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">Categories</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href="#">JavaScript</a></li>
+          <li class="list-group-item"><a href="#">React</a></li>
+          <li class="list-group-item"><a href="#">Web Development</a></li>
+          <li class="list-group-item"><a href="#">CSS & Design</a></li>
+          <li class="list-group-item"><a href="#">Tools & Productivity</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3">
+  &copy; 2025 TechieRohit Blog. All rights reserved.
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+</body>
+</html>
